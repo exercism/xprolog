@@ -159,6 +159,14 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "kindergarten-garden",
+      "uuid": "85f458af-f82f-4df0-8186-1357903383a5",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
     }
   ]
 }
