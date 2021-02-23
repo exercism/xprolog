@@ -1,11 +1,3 @@
-% Please visit https://exercism.io/tracks/prolog/installation
-% for instructions on setting up prolog.
-% Visit https://exercism.io/tracks/prolog/tests
-% for help running the tests for prolog exercises.
-
-% Replace the goal below with
-% your implementation.
-
 create((X, Y)) :-
   %between(0, 7, X), between(0, 7, Y).
   X >= 0, X < 8,
@@ -18,4 +10,3 @@ attack( (Ax, Ay), (Bx, By) ) :-
   ( Ax = Bx
   ; Ay = By
   ; (Bx -Ax)^2 =:= (By-Ay)^2 ).
-
