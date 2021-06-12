@@ -38,6 +38,15 @@ pending :-
 
 :- begin_tests(attack_tests).
 
+    test(different_positions, [fail, condition(pending)]) :-
+      attack((6,6), (6,6)).
+
+    test(out_of_bound_left, [fail, condition(pending)]) :-
+      attack((6,8), (6,6)).
+
+    test(out_of_bound_right, [fail, condition(pending)]) :-
+      attack((6,8), (8,6)).
+
     test(cant_attack, [fail, condition(pending)]) :-
       attack((2,4), (6,6)).
 

@@ -1,12 +1,12 @@
-create((X,Y)) :- X >= 0, Y >= 0, 7 >= X, 7 >= Y.
+create((X, Y)) :-
+  %between(0, 7, X), between(0, 7, Y).
+  X >= 0, X < 8,
+  Y >= 0, Y < 8 .
 
-column((_, Y), (_, V)) :- Y =:= V.
-
-row((X, _), (U, _)):- X =:= U.
-
-diagonal((X, Y), (U, V)) :-  (X-Y) =:= (U-V), !; (X+Y) =:= (U+V).
-
-attack((X, Y), (U, V)) :-
-  column((X, Y), (U, V)), !;
-  row((X, Y), (U, V)), !;
-  diagonal((X, Y), (U, V)).
+attack( (Ax, Ay), (Bx, By) ) :-
+  create( (Ax, Ay) ), 
+  create( (Bx, By) ),
+  (Ax, Ay) \= (Bx, By),
+  ( Ax = Bx
+  ; Ay = By
+  ; (Bx -Ax)^2 =:= (By-Ay)^2 ).
